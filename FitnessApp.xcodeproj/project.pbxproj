@@ -21,6 +21,7 @@
 		BF9CB1151B680D7F00A88F86 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */; };
 		BF9CB1171B680D8800A88F86 /* PastWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */; };
 		BF9CB1191B680D9400A88F86 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */; };
+		BF9CB1221B68590800A88F86 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9CB1211B68590800A88F86 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastWorkoutsViewController.swift; sourceTree = "<group>"; };
 		BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BF9CB1211B68590800A88F86 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9CB1221B68590800A88F86 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +105,8 @@
 				BF9CB0D41B67EC1400A88F86 /* Images.xcassets */,
 				BF9CB0D61B67EC1400A88F86 /* LaunchScreen.xib */,
 				BF9CB0CC1B67EC1400A88F86 /* FitnessApp.xcdatamodeld */,
+				BF9CB0EE1B67F6D600A88F86 /* FitnessApp-Bridging-Header.h */,
+				BF9CB1211B68590800A88F86 /* FacebookSDK.framework */,
 				BF9CB0C81B67EC1400A88F86 /* Supporting Files */,
 			);
 			path = FitnessApp;
@@ -135,7 +140,6 @@
 		BF9CB0F21B67F6E900A88F86 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF9CB0EE1B67F6D600A88F86 /* FitnessApp-Bridging-Header.h */,
 				BF9CB0EF1B67F6D700A88F86 /* SWRevealViewController.h */,
 				BF9CB0F01B67F6D700A88F86 /* SWRevealViewController.m */,
 			);
@@ -388,6 +392,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FitnessApp",
 				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -405,6 +410,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FitnessApp",
 				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

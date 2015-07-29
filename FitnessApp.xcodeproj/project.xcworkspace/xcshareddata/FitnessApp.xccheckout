@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A89E229D-F573-4237-B80A-935F6DC2B991</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>13A2CF486164C61018804D6558A8D0D940A0CC04</key>
+		<string>https://github.com/reid112/FitnessApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FitnessApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>13A2CF486164C61018804D6558A8D0D940A0CC04</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/reid112/FitnessApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>13A2CF486164C61018804D6558A8D0D940A0CC04</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>13A2CF486164C61018804D6558A8D0D940A0CC04</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FitnessApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
