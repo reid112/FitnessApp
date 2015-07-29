@@ -17,6 +17,10 @@
 		BF9CB10D1B68096000A88F86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB10C1B68096000A88F86 /* HomeViewController.swift */; };
 		BF9CB10F1B68096B00A88F86 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */; };
 		BF9CB1111B680B4600A88F86 /* LogWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */; };
+		BF9CB1131B680D7500A88F86 /* ProgressPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1121B680D7500A88F86 /* ProgressPhotosViewController.swift */; };
+		BF9CB1151B680D7F00A88F86 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */; };
+		BF9CB1171B680D8800A88F86 /* PastWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */; };
+		BF9CB1191B680D9400A88F86 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		BF9CB10C1B68096000A88F86 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutsViewController.swift; sourceTree = "<group>"; };
+		BF9CB1121B680D7500A88F86 /* ProgressPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPhotosViewController.swift; sourceTree = "<group>"; };
+		BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastWorkoutsViewController.swift; sourceTree = "<group>"; };
+		BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +95,9 @@
 		BF9CB0C71B67EC1400A88F86 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				BF9CB11A1B68526600A88F86 /* ViewControllers */,
 				BF9CB0F21B67F6E900A88F86 /* SWRevealViewController */,
 				BF9CB0CA1B67EC1400A88F86 /* AppDelegate.swift */,
-				BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */,
-				BF9CB10C1B68096000A88F86 /* HomeViewController.swift */,
-				BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */,
 				BF9CB1001B6807B100A88F86 /* Main.storyboard */,
 				BF9CB0D41B67EC1400A88F86 /* Images.xcassets */,
 				BF9CB0D61B67EC1400A88F86 /* LaunchScreen.xib */,
@@ -134,6 +140,20 @@
 				BF9CB0F01B67F6D700A88F86 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		BF9CB11A1B68526600A88F86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */,
+				BF9CB10C1B68096000A88F86 /* HomeViewController.swift */,
+				BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */,
+				BF9CB1121B680D7500A88F86 /* ProgressPhotosViewController.swift */,
+				BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */,
+				BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */,
+				BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9CB0CE1B67EC1400A88F86 /* FitnessApp.xcdatamodeld in Sources */,
+				BF9CB1131B680D7500A88F86 /* ProgressPhotosViewController.swift in Sources */,
+				BF9CB1151B680D7F00A88F86 /* StatsViewController.swift in Sources */,
+				BF9CB1191B680D9400A88F86 /* SettingsViewController.swift in Sources */,
+				BF9CB1171B680D8800A88F86 /* PastWorkoutsViewController.swift in Sources */,
 				BF9CB10F1B68096B00A88F86 /* MenuViewController.swift in Sources */,
 				BF9CB0CB1B67EC1400A88F86 /* AppDelegate.swift in Sources */,
 				BF9CB1111B680B4600A88F86 /* LogWorkoutsViewController.swift in Sources */,
@@ -361,6 +385,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,6 +402,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
