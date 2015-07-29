@@ -21,6 +21,10 @@
 		BF9CB1151B680D7F00A88F86 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */; };
 		BF9CB1171B680D8800A88F86 /* PastWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */; };
 		BF9CB1191B680D9400A88F86 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */; };
+		BF9CB1271B69759F00A88F86 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9CB1241B69759F00A88F86 /* FBSDKCoreKit.framework */; };
+		BF9CB1281B69759F00A88F86 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9CB1251B69759F00A88F86 /* FBSDKLoginKit.framework */; };
+		BF9CB1291B69759F00A88F86 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9CB1261B69759F00A88F86 /* FBSDKShareKit.framework */; };
+		BF9CB12C1B69774200A88F86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB12B1B69774200A88F86 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastWorkoutsViewController.swift; sourceTree = "<group>"; };
 		BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BF9CB1241B69759F00A88F86 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		BF9CB1251B69759F00A88F86 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		BF9CB1261B69759F00A88F86 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		BF9CB12B1B69774200A88F86 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9CB1281B69759F00A88F86 /* FBSDKLoginKit.framework in Frameworks */,
+				BF9CB1271B69759F00A88F86 /* FBSDKCoreKit.framework in Frameworks */,
+				BF9CB1291B69759F00A88F86 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +122,7 @@
 		BF9CB0C81B67EC1400A88F86 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF9CB12A1B6975A400A88F86 /* Frameworks */,
 				BF9CB0C91B67EC1400A88F86 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -145,6 +157,7 @@
 		BF9CB11A1B68526600A88F86 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF9CB12B1B69774200A88F86 /* LoginViewController.swift */,
 				BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */,
 				BF9CB10C1B68096000A88F86 /* HomeViewController.swift */,
 				BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */,
@@ -154,6 +167,16 @@
 				BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BF9CB12A1B6975A400A88F86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF9CB1241B69759F00A88F86 /* FBSDKCoreKit.framework */,
+				BF9CB1251B69759F00A88F86 /* FBSDKLoginKit.framework */,
+				BF9CB1261B69759F00A88F86 /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +289,7 @@
 				BF9CB1111B680B4600A88F86 /* LogWorkoutsViewController.swift in Sources */,
 				BF9CB0F11B67F6D700A88F86 /* SWRevealViewController.m in Sources */,
 				BF9CB10D1B68096000A88F86 /* HomeViewController.swift in Sources */,
+				BF9CB12C1B69774200A88F86 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +413,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FitnessApp",
+					/Users/Riley/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -407,6 +432,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FitnessApp",
+					/Users/Riley/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -15,7 +15,7 @@ class MenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TableArray = ["Home","Log Workout","Progress Photos", "Past Workouts", "Stats", "Settings", "Log Out"]
+        TableArray = ["Home","Log Workout","Progress Photos", "Past Workouts", "Stats", "Settings"]
         
         
     }

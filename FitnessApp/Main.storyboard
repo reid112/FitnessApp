@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ylg-7f-wMM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7gk-23-OA9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="9gC-iQ-lGU">
+            <objects>
+                <viewController storyboardIdentifier="LoginView" id="7gk-23-OA9" customClass="LoginViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D45-Qt-lBg"/>
+                        <viewControllerLayoutGuide type="bottom" id="sij-0O-Qj9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pUc-dy-pvx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-I7-QaT" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="518" width="568" height="62"/>
+                                <color key="backgroundColor" red="0.11232393731265111" green="0.23827767873557415" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8c5-I7-QaT" firstAttribute="leading" secondItem="pUc-dy-pvx" secondAttribute="leadingMargin" id="8wP-y5-zB1"/>
+                            <constraint firstItem="8c5-I7-QaT" firstAttribute="trailing" secondItem="pUc-dy-pvx" secondAttribute="trailingMargin" id="Rdu-Gq-wVY"/>
+                            <constraint firstItem="sij-0O-Qj9" firstAttribute="top" secondItem="8c5-I7-QaT" secondAttribute="bottom" constant="20" id="c3o-oz-GQc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="8c5-I7-QaT" id="eA9-ms-7Rp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILm-9d-dQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="465" y="122"/>
+        </scene>
         <!--Reveal View Controller-->
         <scene sceneID="gl2-st-f0L">
             <objects>
-                <viewController id="ylg-7f-wMM" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="ylg-7f-wMM" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hKG-4j-FWT"/>
                         <viewControllerLayoutGuide type="bottom" id="rxo-T1-FkV"/>
@@ -89,12 +122,6 @@
                                     <segue destination="72x-Ie-nUq" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="CpW-Kx-bRK"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Log Out" id="bIb-hf-SCV">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIb-hf-SCV" id="TYR-ft-eTv">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="CNI-qw-rvc" id="u9s-wx-iSX"/>
@@ -141,7 +168,7 @@
         <!--Past Workouts-->
         <scene sceneID="ThA-PR-wHe">
             <objects>
-                <viewController id="baY-96-RPG" customClass="PastWorkoutsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PastWorkoutsView" id="baY-96-RPG" customClass="PastWorkoutsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oxf-7R-7z1"/>
                         <viewControllerLayoutGuide type="bottom" id="ahR-wN-YeM"/>
@@ -165,7 +192,7 @@
         <!--Home-->
         <scene sceneID="F0v-aj-6BC">
             <objects>
-                <viewController id="JfT-NI-1gz" customClass="HomeViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" id="JfT-NI-1gz" customClass="HomeViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zmb-Oe-Qcj"/>
                         <viewControllerLayoutGuide type="bottom" id="PYc-Mr-tMf"/>
@@ -221,7 +248,7 @@
         <!--Progress Photos-->
         <scene sceneID="hob-BD-pdf">
             <objects>
-                <viewController id="JoE-9f-Ue2" customClass="ProgressPhotosViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProgressPhotoView" id="JoE-9f-Ue2" customClass="ProgressPhotosViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OwU-t8-9yW"/>
                         <viewControllerLayoutGuide type="bottom" id="sE5-oR-hql"/>
@@ -261,7 +288,7 @@
         <!--Log Workout-->
         <scene sceneID="qDU-B0-7co">
             <objects>
-                <viewController id="boh-LS-Ta4" customClass="LogWorkoutsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogWorkoutView" id="boh-LS-Ta4" customClass="LogWorkoutsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1AF-5h-DKu"/>
                         <viewControllerLayoutGuide type="bottom" id="0gh-dc-uOO"/>
@@ -301,7 +328,7 @@
         <!--Stats-->
         <scene sceneID="7x9-YL-BxC">
             <objects>
-                <viewController id="yIU-hB-MKr" customClass="StatsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsView" id="yIU-hB-MKr" customClass="StatsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sNG-34-Cws"/>
                         <viewControllerLayoutGuide type="bottom" id="smf-CD-zVH"/>
@@ -325,7 +352,7 @@
         <!--Settings-->
         <scene sceneID="vTg-5m-AQZ">
             <objects>
-                <viewController id="DET-Zl-rSl" customClass="SettingsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsView" id="DET-Zl-rSl" customClass="SettingsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bIz-FA-Lpr"/>
                         <viewControllerLayoutGuide type="bottom" id="8K3-9B-qoJ"/>
@@ -333,12 +360,24 @@
                     <view key="view" contentMode="scaleToFill" id="IH2-f1-zIY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irg-gK-Pag" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="526" width="568" height="54"/>
+                                <color key="backgroundColor" red="0.1123239373" green="0.2382776787" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8K3-9B-qoJ" firstAttribute="top" secondItem="Irg-gK-Pag" secondAttribute="bottom" constant="20" id="Cq2-yy-f2r"/>
+                            <constraint firstItem="Irg-gK-Pag" firstAttribute="leading" secondItem="IH2-f1-zIY" secondAttribute="leadingMargin" id="pjM-43-YDm"/>
+                            <constraint firstItem="Irg-gK-Pag" firstAttribute="trailing" secondItem="IH2-f1-zIY" secondAttribute="trailingMargin" id="vl5-ox-g9o"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="GgI-px-iYC">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="xj2-yk-EZ6"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="Irg-gK-Pag" id="ttM-0h-RRx"/>
                         <outlet property="menuButton" destination="xj2-yk-EZ6" id="0a8-ed-5eP"/>
                     </connections>
                 </viewController>
@@ -351,6 +390,6 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L01-yc-DM2"/>
+        <segue reference="Iji-3S-FnE"/>
     </inferredMetricsTieBreakers>
 </document>
