@@ -13,6 +13,7 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var loginButton: FBSDKLoginButton!
+    @IBOutlet weak var DontSignIn: UIButton!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -54,6 +55,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         // user should never log out from here
+    }
+    
+
+    @IBAction func DontSignInClicked(sender: UIButton) {
+        var main = self.storyboard?.instantiateViewControllerWithIdentifier("mainView") as! SWRevealViewController
+        self.presentViewController(main, animated: false, completion: nil)
     }
 
     

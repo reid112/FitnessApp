@@ -414,6 +414,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FitnessApp",
 					/Users/Riley/Documents/FacebookSDK,
+					/Users/Riley/Documents/google_signin_sdk_2_2_0,
 				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,6 +434,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FitnessApp",
 					/Users/Riley/Documents/FacebookSDK,
+					/Users/Riley/Documents/google_signin_sdk_2_2_0,
 				);
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -494,6 +496,7 @@
 				BF9CB0E91B67EC1400A88F86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF9CB0EA1B67EC1400A88F86 /* Build configuration list for PBXNativeTarget "FitnessAppTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +505,7 @@
 				BF9CB0EC1B67EC1400A88F86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

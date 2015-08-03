@@ -13,8 +13,8 @@ import FBSDKLoginKit
 class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
     
-    @IBOutlet weak var logoutButton: FBSDKLoginButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,14 +24,9 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            // User is logged in with facebook, so show the facebook logout button
-            
-            logoutButton.delegate = self
-        } else {
-            // hide facebook button
-            logoutButton.hidden = true
-        }
+        loginButton.delegate = self
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -45,6 +40,8 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         appDelegate.window?.rootViewController = loginViewNav
     }
+    
+
 
     
     

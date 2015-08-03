@@ -18,18 +18,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-I7-QaT" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="16" y="518" width="568" height="62"/>
+                                <rect key="frame" x="16" y="492" width="568" height="62"/>
                                 <color key="backgroundColor" red="0.11232393731265111" green="0.23827767873557415" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Dumbbell" translatesAutoresizingMaskIntoConstraints="NO" id="jXy-fE-o1F">
+                                <rect key="frame" x="163" y="28" width="274" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="4ds-v1-mAA"/>
+                                    <constraint firstAttribute="width" constant="200" id="Uty-CI-pdZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROR-XC-KVp">
+                                <rect key="frame" x="16" y="562" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Dont Sign In"/>
+                                <connections>
+                                    <action selector="DontSignInClicked:" destination="7gk-23-OA9" eventType="touchUpInside" id="WE8-Ac-Gmc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n1-IO-oKp">
+                                <rect key="frame" x="16" y="410" width="568" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8c5-I7-QaT" firstAttribute="leading" secondItem="pUc-dy-pvx" secondAttribute="leadingMargin" id="8wP-y5-zB1"/>
-                            <constraint firstItem="8c5-I7-QaT" firstAttribute="trailing" secondItem="pUc-dy-pvx" secondAttribute="trailingMargin" id="Rdu-Gq-wVY"/>
-                            <constraint firstItem="sij-0O-Qj9" firstAttribute="top" secondItem="8c5-I7-QaT" secondAttribute="bottom" constant="20" id="c3o-oz-GQc"/>
+                            <constraint firstItem="9n1-IO-oKp" firstAttribute="leading" secondItem="pUc-dy-pvx" secondAttribute="leadingMargin" id="1a4-mk-jc1"/>
+                            <constraint firstItem="ROR-XC-KVp" firstAttribute="top" secondItem="8c5-I7-QaT" secondAttribute="bottom" constant="8" id="2Kg-YQ-GUt"/>
+                            <constraint firstItem="9n1-IO-oKp" firstAttribute="trailing" secondItem="pUc-dy-pvx" secondAttribute="trailingMargin" id="65w-e2-qWa"/>
+                            <constraint firstItem="8c5-I7-QaT" firstAttribute="leading" secondItem="pUc-dy-pvx" secondAttribute="leadingMargin" id="CAs-ft-liz"/>
+                            <constraint firstItem="jXy-fE-o1F" firstAttribute="top" secondItem="D45-Qt-lBg" secondAttribute="bottom" constant="8" id="RRe-AD-I7v"/>
+                            <constraint firstItem="sij-0O-Qj9" firstAttribute="top" secondItem="ROR-XC-KVp" secondAttribute="bottom" constant="8" id="TNC-LK-bb9"/>
+                            <constraint firstItem="ROR-XC-KVp" firstAttribute="leading" secondItem="pUc-dy-pvx" secondAttribute="leadingMargin" id="Xht-Ah-r00"/>
+                            <constraint firstItem="ROR-XC-KVp" firstAttribute="trailing" secondItem="pUc-dy-pvx" secondAttribute="trailingMargin" id="ZC5-s4-vub"/>
+                            <constraint firstItem="8c5-I7-QaT" firstAttribute="trailing" secondItem="pUc-dy-pvx" secondAttribute="trailingMargin" id="ajh-Z8-zu2"/>
+                            <constraint firstAttribute="centerX" secondItem="jXy-fE-o1F" secondAttribute="centerX" id="eX7-A3-mfb"/>
+                            <constraint firstItem="8c5-I7-QaT" firstAttribute="top" secondItem="9n1-IO-oKp" secondAttribute="bottom" constant="8" id="qJo-YZ-vT8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DontSignIn" destination="ROR-XC-KVp" id="Kej-4M-oal"/>
                         <outlet property="loginButton" destination="8c5-I7-QaT" id="eA9-ms-7Rp"/>
                     </connections>
                 </viewController>
@@ -377,7 +407,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="xj2-yk-EZ6"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="logoutButton" destination="Irg-gK-Pag" id="ttM-0h-RRx"/>
+                        <outlet property="loginButton" destination="Irg-gK-Pag" id="KbT-Ds-fiU"/>
                         <outlet property="menuButton" destination="xj2-yk-EZ6" id="0a8-ed-5eP"/>
                     </connections>
                 </viewController>
@@ -387,6 +417,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Dumbbell" width="40" height="40"/>
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
