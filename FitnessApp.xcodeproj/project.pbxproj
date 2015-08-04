@@ -11,6 +11,9 @@
 		BF52128D1B6FF31F002A6B61 /* LoggedWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212891B6FF31F002A6B61 /* LoggedWorkout.swift */; };
 		BF52128E1B6FF31F002A6B61 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52128A1B6FF31F002A6B61 /* Plan.swift */; };
 		BF52128F1B6FF31F002A6B61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52128B1B6FF31F002A6B61 /* User.swift */; };
+		BF5212911B71649C002A6B61 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212901B71649C002A6B61 /* SetupViewController.swift */; };
+		BF5212931B7164DF002A6B61 /* CustomSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212921B7164DF002A6B61 /* CustomSetupViewController.swift */; };
+		BF5212951B7164F0002A6B61 /* PlanOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212941B7164F0002A6B61 /* PlanOverviewViewController.swift */; };
 		BF9CB0CB1B67EC1400A88F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB0CA1B67EC1400A88F86 /* AppDelegate.swift */; };
 		BF9CB0CE1B67EC1400A88F86 /* FitnessApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB0CC1B67EC1400A88F86 /* FitnessApp.xcdatamodeld */; };
 		BF9CB0D51B67EC1400A88F86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9CB0D41B67EC1400A88F86 /* Images.xcassets */; };
@@ -46,6 +49,9 @@
 		BF5212891B6FF31F002A6B61 /* LoggedWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedWorkout.swift; sourceTree = "<group>"; };
 		BF52128A1B6FF31F002A6B61 /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		BF52128B1B6FF31F002A6B61 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF5212901B71649C002A6B61 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		BF5212921B7164DF002A6B61 /* CustomSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSetupViewController.swift; sourceTree = "<group>"; };
+		BF5212941B7164F0002A6B61 /* PlanOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOverviewViewController.swift; sourceTree = "<group>"; };
 		BF9CB0C51B67EC1400A88F86 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9CB0C91B67EC1400A88F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF9CB0CA1B67EC1400A88F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 				BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */,
 				BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */,
 				BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */,
+				BF5212901B71649C002A6B61 /* SetupViewController.swift */,
+				BF5212921B7164DF002A6B61 /* CustomSetupViewController.swift */,
+				BF5212941B7164F0002A6B61 /* PlanOverviewViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -299,15 +308,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5212951B7164F0002A6B61 /* PlanOverviewViewController.swift in Sources */,
 				BF9CB0CE1B67EC1400A88F86 /* FitnessApp.xcdatamodeld in Sources */,
 				BF9CB1131B680D7500A88F86 /* ProgressPhotosViewController.swift in Sources */,
 				BF52128E1B6FF31F002A6B61 /* Plan.swift in Sources */,
 				BF9CB1151B680D7F00A88F86 /* StatsViewController.swift in Sources */,
+				BF5212911B71649C002A6B61 /* SetupViewController.swift in Sources */,
 				BF9CB1191B680D9400A88F86 /* SettingsViewController.swift in Sources */,
 				BF9CB1171B680D8800A88F86 /* PastWorkoutsViewController.swift in Sources */,
 				BF52128D1B6FF31F002A6B61 /* LoggedWorkout.swift in Sources */,
 				BF9CB10F1B68096B00A88F86 /* MenuViewController.swift in Sources */,
 				BF52128F1B6FF31F002A6B61 /* User.swift in Sources */,
+				BF5212931B7164DF002A6B61 /* CustomSetupViewController.swift in Sources */,
 				BF9CB0CB1B67EC1400A88F86 /* AppDelegate.swift in Sources */,
 				BF9CB1111B680B4600A88F86 /* LogWorkoutsViewController.swift in Sources */,
 				BF9CB0F11B67F6D700A88F86 /* SWRevealViewController.m in Sources */,
