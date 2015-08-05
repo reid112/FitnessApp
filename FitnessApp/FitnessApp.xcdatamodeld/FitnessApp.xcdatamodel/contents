@@ -21,13 +21,14 @@
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="goals" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="heightFeet" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="heightInches" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="times_per_week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="Plan" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="User" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="User" positionX="-54" positionY="18" width="128" height="150"/>
         <element name="LoggedWorkout" positionX="-36" positionY="63" width="128" height="120"/>
         <element name="ProgressPhoto" positionX="-18" positionY="90" width="128" height="75"/>
     </elements>

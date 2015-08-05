@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -16,16 +17,17 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var tpwPickerView:UIPickerView = UIPickerView()
     var goalsPickerView:UIPickerView = UIPickerView()
     
-    var selectedAge:Int16 = 0
-    var selectedFeet:Int16 = 0
-    var selectedInches:Int16 = 0
-    var selectedWeight:Int16 = 0
-    var selectedTpw:Int16 = 0
-    var selectedGoals:Int16 = 0
+    var selectedAge = 0
+    var selectedFeet = 0
+    var selectedInches = 0
+    var selectedWeight = 0
+    var selectedTpw = 0
+    var selectedGoals = 0
     
     var selectedFeetString = Enums.HeightFeet.Four.description
     var selectedInchesString = Enums.HeightInches.One.description
     
+    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var age: UITextField!
@@ -38,41 +40,49 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     
     @IBAction func GiveMeAPlanClicked(sender: UIButton) {
+        let userDescription = NSEntityDescription.entityForName("User", inManagedObjectContext: moContext!)
+        
+        let user = User(entity: userDescription!, insertIntoManagedObjectContext: moContext)
+        
+        user.gender = gender.selectedSegmentIndex
+        user.age = selectedAge
+        user.heightFeet = selectedFeet
+        user.heightInches = selectedInches
+        user.weight = selectedWeight
+        user.goals = selectedGoals
+        user.times_per_week = selectedTpw
+        
+        var error: NSError?
+        
+        moContext?.save(&error)
+        
+        if let err = error {
+            let a = UIAlertView(title: "Error", message: err.localizedFailureReason, delegate: nil, cancelButtonTitle: "Close")
+            a.show()
+        } else {
+            
+            CreatePlanForUser()
+        }
         
     }
     
     @IBAction func AgeEditing(sender: UITextField) {
-        agePickerView.dataSource = self
-        agePickerView.delegate = self
-        
         sender.inputView = agePickerView
     }
     
     @IBAction func HeightEditing(sender: UITextField) {
-        heightPickerView.dataSource = self
-        heightPickerView.delegate = self
-        
         sender.inputView = heightPickerView
     }
     
     @IBAction func WeightEditing(sender: UITextField) {
-        weightPickerView.dataSource = self
-        weightPickerView.delegate = self
-        
         sender.inputView = weightPickerView
     }
     
     @IBAction func GoalsEditing(sender: UITextField) {
-        goalsPickerView.dataSource = self
-        goalsPickerView.delegate = self
-        
         sender.inputView = goalsPickerView
     }
     
     @IBAction func TimesPerWeekEditing(sender: UITextField) {
-        tpwPickerView.dataSource = self
-        tpwPickerView.delegate = self
-        
         sender.inputView = tpwPickerView
     }
     
@@ -131,19 +141,25 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         if (pickerView == heightPickerView) {
             if (component == 0) {
                 selectedFeetString = Enums.HeightFeet(rawValue: row)!.description
+                selectedFeet = row
             }else {
                 selectedInchesString = Enums.HeightInches(rawValue: row)!.description
+                selectedInches = row
             }
             
             height.text = selectedFeetString + " " + selectedInchesString
         } else if (pickerView == weightPickerView) {
             weight.text = Enums.Weight(rawValue: row)?.description
+            selectedWeight = row
         } else if (pickerView == tpwPickerView) {
             timesPerWeek.text = Enums.TimesPerWeek(rawValue: row)?.description
+            selectedTpw = row
         } else if (pickerView == goalsPickerView) {
             goals.text = Enums.Goals(rawValue: row)?.description
+            selectedGoals = row
         } else {
             age.text = Enums.Age(rawValue: row)?.description
+            selectedAge = row
         }
         
     }
@@ -151,6 +167,94 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     func DismissKeyboard(){
         view.endEditing(true)
+    }
+    
+    func CreatePlanForUser() {
+        let planDescription = NSEntityDescription.entityForName("Plan", inManagedObjectContext: moContext!)
+        
+        let plan = Plan(entity: planDescription!, insertIntoManagedObjectContext: moContext)
+        
+        var error: NSError?
+        
+        if (selectedGoals == Enums.Goals.LoseFat.rawValue) {
+            plan.day = 1
+            plan.exercise = "Test 1"
+            plan.sets = 3
+            plan.reps = 15
+            moContext?.save(&error)
+            
+            plan.day = 1
+            plan.exercise = "Test 2"
+            plan.sets = 3
+            plan.reps = 15
+            moContext?.save(&error)
+            
+            plan.day = 3
+            plan.exercise = "Test 1"
+            plan.sets = 3
+            plan.reps = 15
+            moContext?.save(&error)
+            
+            plan.day = 3
+            plan.exercise = "Test 2"
+            plan.sets = 3
+            plan.reps = 15
+            moContext?.save(&error)
+            
+            plan.day = 5
+            plan.exercise = "Test 1"
+            plan.sets = 3
+            plan.reps = 15
+            moContext?.save(&error)
+            
+            plan.day = 5
+            plan.exercise = "Test 2"
+            plan.sets = 3
+            plan.reps = 15
+            moContext?.save(&error)
+        } else {
+            plan.day = 1
+            plan.exercise = "Test 1"
+            plan.sets = 5
+            plan.reps = 5
+            moContext?.save(&error)
+            
+            plan.day = 1
+            plan.exercise = "Test 2"
+            plan.sets = 5
+            plan.reps = 5
+            moContext?.save(&error)
+            
+            plan.day = 3
+            plan.exercise = "Test 1"
+            plan.sets = 5
+            plan.reps = 5
+            moContext?.save(&error)
+            
+            plan.day = 3
+            plan.exercise = "Test 2"
+            plan.sets = 5
+            plan.reps = 5
+            moContext?.save(&error)
+            
+            plan.day = 5
+            plan.exercise = "Test 1"
+            plan.sets = 5
+            plan.reps = 5
+            moContext?.save(&error)
+            
+            plan.day = 5
+            plan.exercise = "Test 2"
+            plan.sets = 5
+            plan.reps = 5
+            moContext?.save(&error)
+        }
+        
+        
+
+        var main = self.storyboard?.instantiateViewControllerWithIdentifier("mainView") as! SWRevealViewController
+        self.presentViewController(main, animated: false, completion: nil)
+
     }
     
     override func viewDidLoad() {
@@ -161,6 +265,17 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         age.text = Enums.Age.UnderSixteen.description
         timesPerWeek.text = Enums.TimesPerWeek.One.description
         goals.text = Enums.Goals.LoseFat.description
+        
+        agePickerView.dataSource = self
+        agePickerView.delegate = self
+        heightPickerView.dataSource = self
+        heightPickerView.delegate = self
+        weightPickerView.dataSource = self
+        weightPickerView.delegate = self
+        goalsPickerView.dataSource = self
+        goalsPickerView.delegate = self
+        tpwPickerView.dataSource = self
+        tpwPickerView.delegate = self
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)

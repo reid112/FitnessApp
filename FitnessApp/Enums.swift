@@ -9,6 +9,20 @@
 import Foundation
 
 class Enums {
+    
+    enum Gender: Int, Printable {
+        case Male = 0
+        case Female = 1
+        static var count: Int { return Gender.Female.hashValue + 1 }
+        
+        var description: String {
+            switch self {
+            case .Male : return "Male"
+            case .Female : return "Female"
+            default: return ""
+            }
+        }
+    }
 
     enum Age: Int, Printable {
         case UnderSixteen = 0
