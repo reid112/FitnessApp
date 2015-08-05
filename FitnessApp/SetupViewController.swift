@@ -10,21 +10,22 @@ import Foundation
 
 class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var agePickerView:UIPickerView! = UIPickerView()
     var heightPickerView:UIPickerView! = UIPickerView()
     var weightPickerView:UIPickerView! = UIPickerView()
     var tpwPickerView:UIPickerView = UIPickerView()
     var goalsPickerView:UIPickerView = UIPickerView()
     
-    var selectedFeet = "4 feet"
-    var selectedInches = "1 inch"
-    var heightFeetOptions = ["4 feet","5 feet","6 feet","7 feet","8 feet"]
-    var heightInchesOptions = ["1 inch","2 inches","3 inches","4 inches","5 inches","6 inches","7 inches","8 inches","9 inches","10 inches","11 inches"]
-
-    var weightOptions = ["< 100","100 - 130","130 - 150","150 - 180","180 - 200","> 200"]
-
-    var tpwOptions = ["1","2","3","4","5","6","7"]
+    var selectedAge:Int16 = 0
+    var selectedFeet:Int16 = 0
+    var selectedInches:Int16 = 0
+    var selectedWeight:Int16 = 0
+    var selectedTpw:Int16 = 0
+    var selectedGoals:Int16 = 0
     
-    var goalsOptions = ["Lose weight","Gain Muscle"]
+    var selectedFeetString = Enums.HeightFeet.Four.description
+    var selectedInchesString = Enums.HeightInches.One.description
+    
     
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var age: UITextField!
@@ -32,7 +33,6 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var goals: UITextField!
     @IBOutlet weak var timesPerWeek: UITextField!
-    
     @IBOutlet weak var giveMeAPlanButton: UIButton!
     
     
@@ -42,13 +42,10 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     @IBAction func AgeEditing(sender: UITextField) {
-        var datePickerView:UIDatePicker = UIDatePicker()
+        agePickerView.dataSource = self
+        agePickerView.delegate = self
         
-        datePickerView.datePickerMode = UIDatePickerMode.Date
-        
-        sender.inputView = datePickerView
-        
-        datePickerView.addTarget(self, action: Selector("ageValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        sender.inputView = agePickerView
     }
     
     @IBAction func HeightEditing(sender: UITextField) {
@@ -82,24 +79,6 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     
     
-    func ageValueChanged(sender: UIDatePicker) {
-        
-        var dateFormatter = NSDateFormatter()
-        
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        
-        age.text = dateFormatter.stringFromDate(sender.date)
-        
-    }
-    
-
-
-    
-    
-    
-    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         if (pickerView == heightPickerView) {
             return 2
@@ -112,32 +91,36 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         if (pickerView == heightPickerView) {
             if (component == 0) {
-                return heightFeetOptions.count
+                return Enums.HeightFeet.count.hashValue
             } else {
-                return heightInchesOptions.count
+                return Enums.HeightInches.count.hashValue
             }
         } else if (pickerView == weightPickerView) {
-            return weightOptions.count
+            return Enums.Weight.count.hashValue
         } else if (pickerView == tpwPickerView) {
-            return tpwOptions.count
+            return Enums.TimesPerWeek.count.hashValue
+        } else if (pickerView == goalsPickerView) {
+            return Enums.Goals.count.hashValue
         } else {
-            return goalsOptions.count
+            return Enums.Age.count.hashValue
         }
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         if (pickerView == heightPickerView) {
             if (component == 0) {
-                return heightFeetOptions[row]
+                return Enums.HeightFeet(rawValue: row)?.description
             } else {
-                return heightInchesOptions[row]
+                return Enums.HeightInches(rawValue: row)?.description
             }
         } else if (pickerView == weightPickerView) {
-            return weightOptions[row]
+            return Enums.Weight(rawValue: row)?.description
         } else if (pickerView == tpwPickerView) {
-            return tpwOptions[row]
+            return Enums.TimesPerWeek(rawValue: row)?.description
+        } else if (pickerView == goalsPickerView) {
+            return Enums.Goals(rawValue: row)?.description
         } else {
-            return goalsOptions[row]
+            return Enums.Age(rawValue: row)?.description
         }
         
         
@@ -147,18 +130,20 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView == heightPickerView) {
             if (component == 0) {
-                selectedFeet = heightFeetOptions[row]
+                selectedFeetString = Enums.HeightFeet(rawValue: row)!.description
             }else {
-                selectedInches = heightInchesOptions[row]
+                selectedInchesString = Enums.HeightInches(rawValue: row)!.description
             }
             
-            height.text = selectedFeet + " " + selectedInches
+            height.text = selectedFeetString + " " + selectedInchesString
         } else if (pickerView == weightPickerView) {
-            weight.text = weightOptions[row]
+            weight.text = Enums.Weight(rawValue: row)?.description
         } else if (pickerView == tpwPickerView) {
-            timesPerWeek.text = tpwOptions[row]
+            timesPerWeek.text = Enums.TimesPerWeek(rawValue: row)?.description
+        } else if (pickerView == goalsPickerView) {
+            goals.text = Enums.Goals(rawValue: row)?.description
         } else {
-            goals.text = goalsOptions[row]
+            age.text = Enums.Age(rawValue: row)?.description
         }
         
     }
@@ -170,6 +155,12 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        height.text = Enums.HeightFeet.Four.description + " " + Enums.HeightInches.One.description
+        weight.text = Enums.Weight.UnderOne.description
+        age.text = Enums.Age.UnderSixteen.description
+        timesPerWeek.text = Enums.TimesPerWeek.One.description
+        goals.text = Enums.Goals.LoseFat.description
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
