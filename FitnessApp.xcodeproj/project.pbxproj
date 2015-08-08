@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF35B1FA1B7679740024E120 /* PlanOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B1F91B7679740024E120 /* PlanOverviewTableViewController.swift */; };
+		BF35B1FC1B7679C60024E120 /* CustomPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B1FB1B7679C60024E120 /* CustomPlanTableViewController.swift */; };
+		BF35B1FE1B7679D30024E120 /* AddExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B1FD1B7679D30024E120 /* AddExerciseTableViewController.swift */; };
+		BF35B2001B767D450024E120 /* SwiftCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B1FF1B767D450024E120 /* SwiftCoreDataHelper.swift */; };
+		BF35B2141B76871B0024E120 /* ProgressPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B2131B76871B0024E120 /* ProgressPhoto.swift */; };
+		BF35B2161B76871B0024E120 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B2151B76871B0024E120 /* User.swift */; };
+		BF35B2181B76871B0024E120 /* LoggedWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B2171B76871B0024E120 /* LoggedWorkout.swift */; };
+		BF35B21A1B76871B0024E120 /* PlanPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B2191B76871B0024E120 /* PlanPart.swift */; };
 		BF5212911B71649C002A6B61 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212901B71649C002A6B61 /* SetupViewController.swift */; };
-		BF5212931B7164DF002A6B61 /* CustomSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212921B7164DF002A6B61 /* CustomSetupViewController.swift */; };
-		BF5212951B7164F0002A6B61 /* PlanOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212941B7164F0002A6B61 /* PlanOverviewViewController.swift */; };
 		BF5212991B718543002A6B61 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212981B718543002A6B61 /* Enums.swift */; };
-		BF5212AF1B7192CB002A6B61 /* LoggedWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212AB1B7192CB002A6B61 /* LoggedWorkout.swift */; };
-		BF5212B01B7192CB002A6B61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212AC1B7192CB002A6B61 /* User.swift */; };
-		BF5212B11B7192CB002A6B61 /* ProgressPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212AD1B7192CB002A6B61 /* ProgressPhoto.swift */; };
-		BF5212B21B7192CB002A6B61 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5212AE1B7192CB002A6B61 /* Plan.swift */; };
 		BF9CB0CB1B67EC1400A88F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB0CA1B67EC1400A88F86 /* AppDelegate.swift */; };
 		BF9CB0CE1B67EC1400A88F86 /* FitnessApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF9CB0CC1B67EC1400A88F86 /* FitnessApp.xcdatamodeld */; };
 		BF9CB0D51B67EC1400A88F86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9CB0D41B67EC1400A88F86 /* Images.xcassets */; };
@@ -46,14 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF35B1F91B7679740024E120 /* PlanOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOverviewTableViewController.swift; sourceTree = "<group>"; };
+		BF35B1FB1B7679C60024E120 /* CustomPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlanTableViewController.swift; sourceTree = "<group>"; };
+		BF35B1FD1B7679D30024E120 /* AddExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseTableViewController.swift; sourceTree = "<group>"; };
+		BF35B1FF1B767D450024E120 /* SwiftCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCoreDataHelper.swift; sourceTree = "<group>"; };
+		BF35B2131B76871B0024E120 /* ProgressPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPhoto.swift; sourceTree = "<group>"; };
+		BF35B2151B76871B0024E120 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF35B2171B76871B0024E120 /* LoggedWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedWorkout.swift; sourceTree = "<group>"; };
+		BF35B2191B76871B0024E120 /* PlanPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPart.swift; sourceTree = "<group>"; };
 		BF5212901B71649C002A6B61 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
-		BF5212921B7164DF002A6B61 /* CustomSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSetupViewController.swift; sourceTree = "<group>"; };
-		BF5212941B7164F0002A6B61 /* PlanOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOverviewViewController.swift; sourceTree = "<group>"; };
 		BF5212981B718543002A6B61 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		BF5212AB1B7192CB002A6B61 /* LoggedWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedWorkout.swift; sourceTree = "<group>"; };
-		BF5212AC1B7192CB002A6B61 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BF5212AD1B7192CB002A6B61 /* ProgressPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPhoto.swift; sourceTree = "<group>"; };
-		BF5212AE1B7192CB002A6B61 /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		BF9CB0C51B67EC1400A88F86 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9CB0C91B67EC1400A88F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF9CB0CA1B67EC1400A88F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF35B1F71B76743A0024E120 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF35B2191B76871B0024E120 /* PlanPart.swift */,
+				BF35B2171B76871B0024E120 /* LoggedWorkout.swift */,
+				BF35B2151B76871B0024E120 /* User.swift */,
+				BF35B2131B76871B0024E120 /* ProgressPhoto.swift */,
+				BF9CB0CC1B67EC1400A88F86 /* FitnessApp.xcdatamodeld */,
+			);
+			name = DataModel;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		BF35B1F81B7676220024E120 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF9CB12B1B69774200A88F86 /* LoginViewController.swift */,
+				BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */,
+				BF9CB10C1B68096000A88F86 /* HomeViewController.swift */,
+				BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */,
+				BF9CB1121B680D7500A88F86 /* ProgressPhotosViewController.swift */,
+				BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */,
+				BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */,
+				BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */,
+				BF5212901B71649C002A6B61 /* SetupViewController.swift */,
+				BF35B1F91B7679740024E120 /* PlanOverviewTableViewController.swift */,
+				BF35B1FB1B7679C60024E120 /* CustomPlanTableViewController.swift */,
+				BF35B1FD1B7679D30024E120 /* AddExerciseTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		BF9CB0BC1B67EC1300A88F86 = {
 			isa = PBXGroup;
 			children = (
@@ -122,20 +158,17 @@
 		BF9CB0C71B67EC1400A88F86 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
-				BF5212AB1B7192CB002A6B61 /* LoggedWorkout.swift */,
-				BF5212AC1B7192CB002A6B61 /* User.swift */,
-				BF5212AD1B7192CB002A6B61 /* ProgressPhoto.swift */,
-				BF5212AE1B7192CB002A6B61 /* Plan.swift */,
-				BF9CB11A1B68526600A88F86 /* ViewControllers */,
+				BF35B1F81B7676220024E120 /* ViewControllers */,
+				BF35B1F71B76743A0024E120 /* DataModel */,
 				BF9CB0F21B67F6E900A88F86 /* SWRevealViewController */,
 				BF9CB0CA1B67EC1400A88F86 /* AppDelegate.swift */,
 				BF9CB1001B6807B100A88F86 /* Main.storyboard */,
 				BF9CB0D41B67EC1400A88F86 /* Images.xcassets */,
 				BF9CB0D61B67EC1400A88F86 /* LaunchScreen.xib */,
-				BF9CB0CC1B67EC1400A88F86 /* FitnessApp.xcdatamodeld */,
 				BF9CB0EE1B67F6D600A88F86 /* FitnessApp-Bridging-Header.h */,
 				BF9CB0C81B67EC1400A88F86 /* Supporting Files */,
 				BF5212981B718543002A6B61 /* Enums.swift */,
+				BF35B1FF1B767D450024E120 /* SwiftCoreDataHelper.swift */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -173,24 +206,6 @@
 				BF9CB0F01B67F6D700A88F86 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
-			sourceTree = "<group>";
-		};
-		BF9CB11A1B68526600A88F86 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				BF9CB12B1B69774200A88F86 /* LoginViewController.swift */,
-				BF9CB10E1B68096B00A88F86 /* MenuViewController.swift */,
-				BF9CB10C1B68096000A88F86 /* HomeViewController.swift */,
-				BF9CB1101B680B4600A88F86 /* LogWorkoutsViewController.swift */,
-				BF9CB1121B680D7500A88F86 /* ProgressPhotosViewController.swift */,
-				BF9CB1161B680D8800A88F86 /* PastWorkoutsViewController.swift */,
-				BF9CB1141B680D7F00A88F86 /* StatsViewController.swift */,
-				BF9CB1181B680D9400A88F86 /* SettingsViewController.swift */,
-				BF5212901B71649C002A6B61 /* SetupViewController.swift */,
-				BF5212921B7164DF002A6B61 /* CustomSetupViewController.swift */,
-				BF5212941B7164F0002A6B61 /* PlanOverviewViewController.swift */,
-			);
-			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		BF9CB12A1B6975A400A88F86 /* Frameworks */ = {
@@ -303,25 +318,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5212951B7164F0002A6B61 /* PlanOverviewViewController.swift in Sources */,
 				BF9CB0CE1B67EC1400A88F86 /* FitnessApp.xcdatamodeld in Sources */,
+				BF35B21A1B76871B0024E120 /* PlanPart.swift in Sources */,
 				BF9CB1131B680D7500A88F86 /* ProgressPhotosViewController.swift in Sources */,
+				BF35B2001B767D450024E120 /* SwiftCoreDataHelper.swift in Sources */,
 				BF9CB1151B680D7F00A88F86 /* StatsViewController.swift in Sources */,
+				BF35B1FE1B7679D30024E120 /* AddExerciseTableViewController.swift in Sources */,
 				BF5212911B71649C002A6B61 /* SetupViewController.swift in Sources */,
 				BF9CB1191B680D9400A88F86 /* SettingsViewController.swift in Sources */,
+				BF35B2181B76871B0024E120 /* LoggedWorkout.swift in Sources */,
 				BF9CB1171B680D8800A88F86 /* PastWorkoutsViewController.swift in Sources */,
-				BF5212B01B7192CB002A6B61 /* User.swift in Sources */,
+				BF35B1FA1B7679740024E120 /* PlanOverviewTableViewController.swift in Sources */,
+				BF35B2141B76871B0024E120 /* ProgressPhoto.swift in Sources */,
+				BF35B1FC1B7679C60024E120 /* CustomPlanTableViewController.swift in Sources */,
 				BF5212991B718543002A6B61 /* Enums.swift in Sources */,
-				BF5212B11B7192CB002A6B61 /* ProgressPhoto.swift in Sources */,
 				BF9CB10F1B68096B00A88F86 /* MenuViewController.swift in Sources */,
-				BF5212B21B7192CB002A6B61 /* Plan.swift in Sources */,
-				BF5212931B7164DF002A6B61 /* CustomSetupViewController.swift in Sources */,
 				BF9CB0CB1B67EC1400A88F86 /* AppDelegate.swift in Sources */,
-				BF5212AF1B7192CB002A6B61 /* LoggedWorkout.swift in Sources */,
 				BF9CB1111B680B4600A88F86 /* LogWorkoutsViewController.swift in Sources */,
 				BF9CB0F11B67F6D700A88F86 /* SWRevealViewController.m in Sources */,
 				BF9CB10D1B68096000A88F86 /* HomeViewController.swift in Sources */,
 				BF9CB12C1B69774200A88F86 /* LoginViewController.swift in Sources */,
+				BF35B2161B76871B0024E120 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +565,8 @@
 				BF9CB0CD1B67EC1400A88F86 /* FitnessApp.xcdatamodel */,
 			);
 			currentVersion = BF9CB0CD1B67EC1400A88F86 /* FitnessApp.xcdatamodel */;
-			path = FitnessApp.xcdatamodeld;
+			name = FitnessApp.xcdatamodeld;
+			path = FitnessApp/FitnessApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -11,6 +11,8 @@ import CoreData
 
 class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    let moc:NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
+    
     var agePickerView:UIPickerView! = UIPickerView()
     var heightPickerView:UIPickerView! = UIPickerView()
     var weightPickerView:UIPickerView! = UIPickerView()
@@ -27,7 +29,7 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var selectedFeetString = Enums.HeightFeet.Four.description
     var selectedInchesString = Enums.HeightInches.One.description
     
-    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var age: UITextField!
@@ -40,30 +42,19 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     
     @IBAction func GiveMeAPlanClicked(sender: UIButton) {
-        let userDescription = NSEntityDescription.entityForName("User", inManagedObjectContext: moContext!)
         
-        let user = User(entity: userDescription!, insertIntoManagedObjectContext: moContext)
-        
-        user.gender = gender.selectedSegmentIndex
-        user.age = selectedAge
-        user.heightFeet = selectedFeet
-        user.heightInches = selectedInches
-        user.weight = selectedWeight
-        user.goals = selectedGoals
-        user.times_per_week = selectedTpw
-        
-        var error: NSError?
-        
-        moContext?.save(&error)
-        
-        if let err = error {
-            let a = UIAlertView(title: "Error", message: err.localizedFailureReason, delegate: nil, cancelButtonTitle: "Close")
-            a.show()
-        } else {
+        var user: User = SwiftCoreDataHelper.insertManagedObject(NSStringFromClass(User), managedObjectConect: moc) as! User
             
-            CreatePlanForUser()
-        }
+        user.gender = NSNumber(integer: gender.selectedSegmentIndex)
+        user.heightFeet = NSNumber(integer: selectedFeet)
+        user.heightInches = NSNumber(integer: selectedInches)
+        user.weight = NSNumber(integer: selectedWeight)
+        user.goals = NSNumber(integer: selectedGoals)
+        user.times_per_week = NSNumber(integer: selectedTpw)
         
+        SwiftCoreDataHelper.saveManagedObjectContext(moc)
+        
+        CreatePlanForUser()
     }
     
     @IBAction func AgeEditing(sender: UITextField) {
@@ -170,91 +161,43 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     func CreatePlanForUser() {
-        let planDescription = NSEntityDescription.entityForName("Plan", inManagedObjectContext: moContext!)
-        
-        let plan = Plan(entity: planDescription!, insertIntoManagedObjectContext: moContext)
-        
-        var error: NSError?
         
         if (selectedGoals == Enums.Goals.LoseFat.rawValue) {
-            plan.day = 1
-            plan.exercise = "Test 1"
-            plan.sets = 3
-            plan.reps = 15
-            moContext?.save(&error)
+            SavePlanPart(1, sets: 3, reps: 15, exercise: "E1")
+            SavePlanPart(1, sets: 3, reps: 15, exercise: "E2")
             
-            plan.day = 1
-            plan.exercise = "Test 2"
-            plan.sets = 3
-            plan.reps = 15
-            moContext?.save(&error)
+            SavePlanPart(2, sets: 3, reps: 15, exercise: "E3")
+            SavePlanPart(2, sets: 3, reps: 15, exercise: "E4")
             
-            plan.day = 3
-            plan.exercise = "Test 1"
-            plan.sets = 3
-            plan.reps = 15
-            moContext?.save(&error)
-            
-            plan.day = 3
-            plan.exercise = "Test 2"
-            plan.sets = 3
-            plan.reps = 15
-            moContext?.save(&error)
-            
-            plan.day = 5
-            plan.exercise = "Test 1"
-            plan.sets = 3
-            plan.reps = 15
-            moContext?.save(&error)
-            
-            plan.day = 5
-            plan.exercise = "Test 2"
-            plan.sets = 3
-            plan.reps = 15
-            moContext?.save(&error)
+            SavePlanPart(5, sets: 3, reps: 15, exercise: "E5")
+            SavePlanPart(5, sets: 3, reps: 15, exercise: "E6")
         } else {
-            plan.day = 1
-            plan.exercise = "Test 1"
-            plan.sets = 5
-            plan.reps = 5
-            moContext?.save(&error)
+            SavePlanPart(1, sets: 5, reps: 5, exercise: "E1")
+            SavePlanPart(1, sets: 5, reps: 5, exercise: "E2")
             
-            plan.day = 1
-            plan.exercise = "Test 2"
-            plan.sets = 5
-            plan.reps = 5
-            moContext?.save(&error)
+            SavePlanPart(3, sets: 5, reps: 5, exercise: "E3")
+            SavePlanPart(3, sets: 5, reps: 5, exercise: "E4")
             
-            plan.day = 3
-            plan.exercise = "Test 1"
-            plan.sets = 5
-            plan.reps = 5
-            moContext?.save(&error)
-            
-            plan.day = 3
-            plan.exercise = "Test 2"
-            plan.sets = 5
-            plan.reps = 5
-            moContext?.save(&error)
-            
-            plan.day = 5
-            plan.exercise = "Test 1"
-            plan.sets = 5
-            plan.reps = 5
-            moContext?.save(&error)
-            
-            plan.day = 5
-            plan.exercise = "Test 2"
-            plan.sets = 5
-            plan.reps = 5
-            moContext?.save(&error)
+            SavePlanPart(5, sets: 5, reps: 5, exercise: "E5")
+            SavePlanPart(5, sets: 5, reps: 5, exercise: "E6")
         }
         
+        var planOverview = self.storyboard?.instantiateViewControllerWithIdentifier("planOverview") as! PlanOverviewTableViewController
         
+        let navigationController = UINavigationController(rootViewController: planOverview)
+        self.presentViewController(navigationController, animated: true, completion: nil)
 
-        var main = self.storyboard?.instantiateViewControllerWithIdentifier("mainView") as! SWRevealViewController
-        self.presentViewController(main, animated: false, completion: nil)
-
+    }
+    
+    func SavePlanPart(day: Int, sets: Int, reps: Int, exercise: String) {
+        var planPart: PlanPart = SwiftCoreDataHelper.insertManagedObject(NSStringFromClass(PlanPart), managedObjectConect: moc) as! PlanPart
+        
+        planPart.day = NSNumber(integer: day)
+        planPart.exercise = exercise
+        planPart.sets = NSNumber(integer: sets)
+        planPart.reps = NSNumber(integer: reps)
+        
+        SwiftCoreDataHelper.saveManagedObjectContext(moc)
     }
     
     override func viewDidLoad() {

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="LoggedWorkout" representedClassName="PRODUCT_MODULE_NAME.LoggedWorkout" syncable="YES">
+    <entity name="LoggedWorkout" representedClassName="LoggedWorkout" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="exercise" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sets" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="Plan" representedClassName="PRODUCT_MODULE_NAME.Plan" syncable="YES">
+    <entity name="PlanPart" representedClassName="PlanPart" syncable="YES">
         <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="exercise" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sets" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="ProgressPhoto" representedClassName="PRODUCT_MODULE_NAME.ProgressPhoto" syncable="YES">
+    <entity name="ProgressPhoto" representedClassName="ProgressPhoto" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="PRODUCT_MODULE_NAME.User" syncable="YES">
+    <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="goals" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -27,9 +27,9 @@
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Plan" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="User" positionX="-54" positionY="18" width="128" height="150"/>
-        <element name="LoggedWorkout" positionX="-36" positionY="63" width="128" height="120"/>
-        <element name="ProgressPhoto" positionX="-18" positionY="90" width="128" height="75"/>
+        <element name="LoggedWorkout" positionX="18" positionY="-36" width="128" height="118"/>
+        <element name="PlanPart" positionX="160" positionY="-195" width="128" height="103"/>
+        <element name="ProgressPhoto" positionX="162" positionY="-36" width="128" height="73"/>
+        <element name="User" positionX="16" positionY="-198" width="128" height="148"/>
     </elements>
 </model>

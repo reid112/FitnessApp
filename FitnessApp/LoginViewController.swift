@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let moc:NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
 
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     @IBOutlet weak var DontSignIn: UIButton!
@@ -64,13 +64,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func ShowHomeOrSetup() {
         
-        var error: NSError?
+        let results:NSArray = SwiftCoreDataHelper.fetchEntities(NSStringFromClass(PlanPart), withPredicate: nil, managedObjectContext: moc)
         
-        let request = NSFetchRequest(entityName: "Plan")
-        
-        var plan = moContext?.executeFetchRequest(request, error: &error)
-        
-        if (plan?.count == 0) {
+        if (results.count == 0) {
             // Go To Setup
 
             performSegueWithIdentifier("goToSetup", sender: nil)

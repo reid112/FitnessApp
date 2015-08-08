@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../FitnessApp/LoggedWorkout.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../FitnessApp/User.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../FitnessApp/ProgressPhoto.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../FitnessApp/Plan.swift">
-   </FileRef>
-   <FileRef
       location = "self:FitnessApp.xcodeproj">
    </FileRef>
 </Workspace>
