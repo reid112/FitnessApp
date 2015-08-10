@@ -163,23 +163,35 @@ class SetupViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     func CreatePlanForUser() {
         
         if (selectedGoals == Enums.Goals.LoseFat.rawValue) {
-            SavePlanPart(1, sets: 3, reps: 15, exercise: "E1")
-            SavePlanPart(1, sets: 3, reps: 15, exercise: "E2")
+            SavePlanPart(1, sets: 3, reps: 15, exercise: "Bench Press")
+            SavePlanPart(1, sets: 5, reps: 20, exercise: "Pushups")
+            SavePlanPart(1, sets: 3, reps: 10, exercise: "Dips")
+            SavePlanPart(1, sets: 3, reps: 20, exercise: "Tricep Push Downs")
             
-            SavePlanPart(2, sets: 3, reps: 15, exercise: "E3")
-            SavePlanPart(2, sets: 3, reps: 15, exercise: "E4")
+            SavePlanPart(3, sets: 3, reps: 5, exercise: "Deadlifts")
+            SavePlanPart(3, sets: 3, reps: 8, exercise: "Pullups")
+            SavePlanPart(3, sets: 5, reps: 10, exercise: "Rows")
+            SavePlanPart(3, sets: 5, reps: 25, exercise: "Dumbbell Curls")
+            SavePlanPart(3, sets: 5, reps: 25, exercise: "Hammer Curls")
             
-            SavePlanPart(5, sets: 3, reps: 15, exercise: "E5")
-            SavePlanPart(5, sets: 3, reps: 15, exercise: "E6")
+            SavePlanPart(5, sets: 5, reps: 15, exercise: "Squats")
+            SavePlanPart(5, sets: 5, reps: 15, exercise: "Lunges")
+            SavePlanPart(5, sets: 5, reps: 20, exercise: "Calf Raises")
         } else {
-            SavePlanPart(1, sets: 5, reps: 5, exercise: "E1")
-            SavePlanPart(1, sets: 5, reps: 5, exercise: "E2")
+            SavePlanPart(1, sets: 5, reps: 5, exercise: "Bench Press")
+            SavePlanPart(1, sets: 5, reps: 20, exercise: "Pushups")
+            SavePlanPart(1, sets: 5, reps: 5, exercise: "Dips")
+            SavePlanPart(1, sets: 5, reps: 12, exercise: "Tricep Push Downs")
             
-            SavePlanPart(3, sets: 5, reps: 5, exercise: "E3")
-            SavePlanPart(3, sets: 5, reps: 5, exercise: "E4")
+            SavePlanPart(3, sets: 3, reps: 5, exercise: "Deadlifts")
+            SavePlanPart(3, sets: 3, reps: 5, exercise: "Pullups")
+            SavePlanPart(3, sets: 5, reps: 5, exercise: "Rows")
+            SavePlanPart(3, sets: 5, reps: 8, exercise: "Dumbbell Curls")
+            SavePlanPart(3, sets: 5, reps: 8, exercise: "Hammer Curls")
             
-            SavePlanPart(5, sets: 5, reps: 5, exercise: "E5")
-            SavePlanPart(5, sets: 5, reps: 5, exercise: "E6")
+            SavePlanPart(5, sets: 5, reps: 5, exercise: "Squats")
+            SavePlanPart(5, sets: 5, reps: 5, exercise: "Lunges")
+            SavePlanPart(5, sets: 5, reps: 12, exercise: "Calf Raises")
         }
         
         var planOverview = self.storyboard?.instantiateViewControllerWithIdentifier("planOverview") as! PlanOverviewTableViewController

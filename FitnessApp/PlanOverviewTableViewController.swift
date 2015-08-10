@@ -14,6 +14,8 @@ class PlanOverviewTableViewController: UITableViewController {
     
     let moc:NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
     
+    let days = ["Day 1","Day 2","Day 3","Day 4","Day 5","Day 6","Day 7"]
+    let exercisesPerDay = [4, 0, 5, 0, 3, 0, 0]
     var planParts:NSMutableArray = NSMutableArray()
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
@@ -28,16 +30,14 @@ class PlanOverviewTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         LoadData()
     }
     
     func LoadData() {
         planParts.removeAllObjects()
+        
+        var curDay = 1
+        var count = 0
         
         let results:NSArray = SwiftCoreDataHelper.fetchEntities(NSStringFromClass(PlanPart), withPredicate: nil, managedObjectContext: moc)
         
@@ -59,30 +59,54 @@ class PlanOverviewTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return days.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return planParts.count
+
+        if exercisesPerDay[section] == 0 {
+            return 1
+        }
+        
+        return exercisesPerDay[section]
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("planPartCell", forIndexPath: indexPath) as! UITableViewCell
 
-        let planPartDict:NSDictionary = planParts.objectAtIndex(indexPath.row) as! NSDictionary
+        let count = exercisesPerDay[indexPath.section]
         
-        let day = planPartDict.objectForKey("day") as! Int
-        let exercise = planPartDict.objectForKey("exercise") as! String
-        let sets = planPartDict.objectForKey("sets") as! Int
-        let reps = planPartDict.objectForKey("reps") as! Int
+        if count > 0 {
+            var row = 0, sectionRow = 0
+            
+            for var index = 0; index < indexPath.section; ++index {
+                row = row + exercisesPerDay[index]
+            }
+            
+            row = row + indexPath.row
+            
+            let planPartDict:NSDictionary = planParts.objectAtIndex(row) as! NSDictionary
+            
+            let exercise = planPartDict.objectForKey("exercise") as! String
+            let sets = planPartDict.objectForKey("sets") as! Int
+            let reps = planPartDict.objectForKey("reps") as! Int
+            
+            cell.textLabel?.text = exercise
+            cell.detailTextLabel?.text = "\(sets) sets of \(reps) reps"
+        } else {
+            cell.textLabel?.text = "[Off Day]"
+            cell.detailTextLabel?.text = " "
+        }
         
-        cell.textLabel?.text = exercise
-        cell.detailTextLabel?.text = "\(sets) sets of \(reps) reps"
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return days[section]
     }
     
 
